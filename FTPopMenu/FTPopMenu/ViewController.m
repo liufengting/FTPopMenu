@@ -28,6 +28,7 @@
     FTPopTableViewController *pop = [[FTPopTableViewController alloc] init];
     pop.barButtonItem = sender;
     pop.titleString = @"Some";
+    pop.tintColor = [UIColor lightGrayColor];
 //    pop.rowHeight = 80;
 //    pop.sourceRect = CGRectMake(self.view.frame.size.width - 50, 25, 40, 30);
     

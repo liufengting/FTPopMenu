@@ -16,7 +16,7 @@
 
 -(instancetype)init
 {
-    return self = [self initWithStyle:UITableViewStylePlain];
+    return self = [self initWithStyle:UITableViewStyleGrouped];
 }
 
 -(instancetype)initWithStyle:(UITableViewStyle)style
@@ -145,7 +145,7 @@
     popoverPresentationController.popoverLayoutMargins = UIEdgeInsetsZero;
     
 //    if (self.backgroundColor) {
-        popoverPresentationController.backgroundColor = [UIColor whiteColor];
+        popoverPresentationController.backgroundColor = self.tintColor;
 //    }
     
 //    if (self.sourceView && CGRectEqualToRect(self.sourceView.bounds, self.sourceRect)) {
