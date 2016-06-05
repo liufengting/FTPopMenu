@@ -37,6 +37,21 @@
     
 }
 
+- (IBAction)showAction:(UIButton *)sender {
+    
+    FTPopTableViewController *pop = [[FTPopTableViewController alloc] init];
+    pop.sourceView = sender;
+    pop.sourceRect = [sender frame];
+    pop.titleString = @"Some";
+    pop.tintColor = [UIColor lightGrayColor];
+
+    
+    [self presentViewController:pop animated:YES completion:nil];
+
+    
+    
+    
+}
 
 
 @end

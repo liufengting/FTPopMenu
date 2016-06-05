@@ -16,7 +16,20 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xki-29-Vx0">
+                                <rect key="frame" x="281" y="72" width="38" height="30"/>
+                                <state key="normal" title="Show"/>
+                                <connections>
+                                    <action selector="showAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aSD-cw-cpQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xki-29-Vx0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="N9B-Hj-RED"/>
+                            <constraint firstItem="xki-29-Vx0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="qIx-88-HKf"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Demo" id="X0J-G8-BXp">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="k0I-r9-Xqi">

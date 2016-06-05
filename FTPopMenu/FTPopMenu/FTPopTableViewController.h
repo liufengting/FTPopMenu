@@ -10,15 +10,12 @@
 
 @interface FTPopTableViewController : UITableViewController
 
-@property(nonatomic, weak) UIBarButtonItem *barButtonItem;
-
-@property(nonatomic, strong) UIView *sourceView;
-
-@property(nonatomic, assign) CGRect sourceRect;
-
-
+@property(nonatomic, weak)UIBarButtonItem *barButtonItem;
+@property(nonatomic, strong)UIView *sourceView;
+@property(nonatomic, assign)CGRect sourceRect;
+@property(nonatomic, assign)CGFloat perferdWidth;
+@property(nonatomic, assign)BOOL displayInViewBounds;
 @property (nonatomic, assign)CGFloat rowHeight;
-
 @property (nonatomic, strong)UIColor* tintColor;
 @property (nonatomic, strong)UIColor* textColor;
 @property (nonatomic, strong)NSString* titleString;

@@ -50,14 +50,14 @@
 -(CGFloat)rowHeight
 {
     if (_rowHeight <= 0) {
-        return 40;
+        _rowHeight = 40;
     }
     return _rowHeight;
 }
 -(UIColor *)tintColor
 {
     if (!_tintColor) {
-        return [UIColor whiteColor];
+        _tintColor = [UIColor whiteColor];
     }
     return _tintColor;
 }
@@ -65,10 +65,18 @@
 -(UIColor *)textColor
 {
     if (!_textColor) {
-        return [UIColor blackColor];
+        _textColor = [UIColor blackColor];
     }
     return _textColor;
 }
+-(CGFloat)perferdWidth
+{
+    if (_perferdWidth <= 0) {
+        _perferdWidth = 200;
+    }
+    return _perferdWidth;
+}
+
 -(CGFloat)tableviewHeaderViewHeight
 {
     if (_titleString.length) {
@@ -76,6 +84,7 @@
     }
     return 0.01;
 }
+
 
 
 
@@ -132,13 +141,13 @@
 #pragma mark - UIPopoverPresentationControllerDelegate
 
 - (void)prepareForPopoverPresentation:(UIPopoverPresentationController *)popoverPresentationController {
- if (self.barButtonItem) {
+    if (self.barButtonItem) {
         self.popoverPresentationController.barButtonItem = self.barButtonItem;
     } else {
         self.popoverPresentationController.sourceView = self.view;
-//        self.popoverPresentationController.sourceRect = self.sourceRect;
+        self.popoverPresentationController.sourceRect = self.sourceRect;
     }
-    self.preferredContentSize = CGSizeMake(200,300);
+    self.preferredContentSize = CGSizeMake(self.perferdWidth,300);
     
     popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionUp;
     popoverPresentationController.passthroughViews = nil;
@@ -148,11 +157,11 @@
         popoverPresentationController.backgroundColor = self.tintColor;
 //    }
     
-//    if (self.sourceView && CGRectEqualToRect(self.sourceView.bounds, self.sourceRect)) {
-//        _displayInViewBounds = YES;
-//    } else {
-//        _displayInViewBounds = NO;
-//    }
+    if (self.sourceView && CGRectEqualToRect(self.sourceView.bounds, self.sourceRect)) {
+        _displayInViewBounds = YES;
+    } else {
+        _displayInViewBounds = NO;
+    }
 }
 
 - (BOOL)popoverPresentationControllerShouldDismissPopover:(UIPopoverPresentationController *)popoverPresentationController {
@@ -165,11 +174,11 @@
     }
     
     if (rect) {
-//        if (_displayInViewBounds) {
+        if (_displayInViewBounds) {
             *rect = self.sourceView.bounds;
-//        } else {
-//            *rect = self.sourceRect;
-//        }
+        } else {
+            *rect = self.sourceRect;
+        }
     }
 }
 
