@@ -16,9 +16,9 @@
 
 -(instancetype)init
 {
-    return self = [self initWithStyle:UITableViewStyleGrouped];
+    self = [self initWithStyle:UITableViewStyleGrouped];
+    return self;
 }
-
 -(instancetype)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -27,30 +27,42 @@
     }
     return self;
 }
--(instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        [self setUp];
-    }
-    return self ;
+
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+
+    
+    
 }
+
 -(void)setUp
 {
     self.automaticallyAdjustsScrollViewInsets = YES;
     self.modalPresentationStyle = UIModalPresentationPopover;
     self.popoverPresentationController.delegate = self;
+
+    self.tableView.backgroundColor = [UIColor clearColor];
+
+//    if (!_tableView) {
+//        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 200, 200) style:UITableViewStyleGrouped];
+//        _tableView.translatesAutoresizingMaskIntoConstraints = NO;
+//        [self.view addSubview:_tableView];
+//    }
+//    _tableView.delegate = self;
+//    _tableView.dataSource = self;
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-}
+
+
+
+
 
 -(CGFloat)rowHeight
 {
     if (_rowHeight <= 0) {
-        _rowHeight = 40;
+        _rowHeight = 44.f;
     }
     return _rowHeight;
 }
@@ -72,7 +84,7 @@
 -(CGFloat)perferdWidth
 {
     if (_perferdWidth <= 0) {
-        _perferdWidth = 200;
+        _perferdWidth = 200.f;
     }
     return _perferdWidth;
 }
@@ -80,11 +92,15 @@
 -(CGFloat)tableviewHeaderViewHeight
 {
     if (_titleString.length) {
-        return 30;
+        return 30.f;
     }
-    return 0.01;
+    return 0.f;
 }
 
+-(CGFloat)contentHeight
+{
+    return self.tableviewHeaderViewHeight + (self.menuStringArray.count)*self.rowHeight;
+}
 
 
 
@@ -95,7 +111,7 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return [self.menuStringArray count];
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
@@ -113,7 +129,7 @@
 {
     if (_titleString.length) {
         UILabel *header = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, [self tableviewHeaderViewHeight])];
-        header.backgroundColor = self.tintColor;
+        header.backgroundColor = [UIColor clearColor];
         header.textColor = self.textColor;
         header.font = [UIFont boldSystemFontOfSize:14];
         header.textAlignment = NSTextAlignmentCenter;
@@ -125,10 +141,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"FTPopTableViewControllerCellIdentifier"];
-    cell.backgroundColor = self.tintColor;
-    cell.textLabel.text = @"Something";
+    cell.backgroundColor = [UIColor clearColor];
+    cell.textLabel.text = self.menuStringArray[indexPath.row];
     cell.textLabel.textColor = self.textColor;
-    cell.textLabel.font = [UIFont systemFontOfSize:14];
     cell.imageView.image = [UIImage imageNamed:@"button-folder"];
     return cell;
 }
@@ -141,27 +156,20 @@
 #pragma mark - UIPopoverPresentationControllerDelegate
 
 - (void)prepareForPopoverPresentation:(UIPopoverPresentationController *)popoverPresentationController {
+    
     if (self.barButtonItem) {
         self.popoverPresentationController.barButtonItem = self.barButtonItem;
     } else {
-        self.popoverPresentationController.sourceView = self.view;
-        self.popoverPresentationController.sourceRect = self.sourceRect;
+        self.popoverPresentationController.sourceView = self.sourceView;
+        self.popoverPresentationController.sourceRect = self.sourceView.bounds;
     }
-    self.preferredContentSize = CGSizeMake(self.perferdWidth,300);
-    
+    self.preferredContentSize = CGSizeMake(self.perferdWidth,[self contentHeight]);
+
     popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionUp;
     popoverPresentationController.passthroughViews = nil;
-    popoverPresentationController.popoverLayoutMargins = UIEdgeInsetsZero;
-    
-//    if (self.backgroundColor) {
-        popoverPresentationController.backgroundColor = self.tintColor;
-//    }
-    
-    if (self.sourceView && CGRectEqualToRect(self.sourceView.bounds, self.sourceRect)) {
-        _displayInViewBounds = YES;
-    } else {
-        _displayInViewBounds = NO;
-    }
+    popoverPresentationController.popoverLayoutMargins = UIEdgeInsetsMake(40, 0, 0, 0);
+    popoverPresentationController.backgroundColor = self.tintColor;
+  
 }
 
 - (BOOL)popoverPresentationControllerShouldDismissPopover:(UIPopoverPresentationController *)popoverPresentationController {
@@ -174,13 +182,15 @@
     }
     
     if (rect) {
-        if (_displayInViewBounds) {
-            *rect = self.sourceView.bounds;
-        } else {
-            *rect = self.sourceRect;
-        }
+        *rect = self.sourceView.bounds;
     }
 }
+- (void)popoverPresentationControllerDidDismissPopover:(UIPopoverPresentationController *)popoverPresentationController
+{
+    
+    
+}
+
 
 #pragma mark - UIAdaptivePresentationControllerDelegate
 
@@ -192,16 +202,19 @@
     }
 }
 
-// This will wrap the content view controller in a navigation controller when diplayed in full screen.
 - (UIViewController *)presentationController:(UIPresentationController *)controller viewControllerForAdaptivePresentationStyle:(UIModalPresentationStyle)style {
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller.presentedViewController];
     return navController;
 }
 
+
 #pragma mark - Actions
 
 - (void)dismiss {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES
+                             completion:^{
+                                 
+                             }];
 }
 
 

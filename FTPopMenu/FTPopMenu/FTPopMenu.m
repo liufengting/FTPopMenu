@@ -42,7 +42,7 @@
 -(FTPopTableViewController *)popMenu
 {
     if (!_popMenu) {
-        _popMenu = [[FTPopTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
+//        _popMenu = [[FTPopTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
     }
     return _popMenu;
 }

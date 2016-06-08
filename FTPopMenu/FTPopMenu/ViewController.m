@@ -19,8 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+//    self.navigationController.navigationBar.translucent = YES;
     
-
+//    self.navigationController.navigationBar.hidden = YES;
 }
 
 - (IBAction)doneAction:(UIBarButtonItem *)sender {
@@ -28,10 +29,10 @@
     FTPopTableViewController *pop = [[FTPopTableViewController alloc] init];
     pop.barButtonItem = sender;
     pop.titleString = @"Some";
-    pop.tintColor = [UIColor lightGrayColor];
-//    pop.rowHeight = 80;
-//    pop.sourceRect = CGRectMake(self.view.frame.size.width - 50, 25, 40, 30);
-    
+    pop.tintColor = [[UIColor whiteColor] colorWithAlphaComponent:0.3];
+//    pop.rowHeight = 60;
+    pop.menuStringArray = @[@"something important",@"something important",@"something important",@"something important",@"something important",@"something important",@"something important",@"something important",];
+
     [self presentViewController:pop animated:YES completion:nil];
     
     
@@ -41,15 +42,11 @@
     
     FTPopTableViewController *pop = [[FTPopTableViewController alloc] init];
     pop.sourceView = sender;
-    pop.sourceRect = [sender frame];
     pop.titleString = @"Some";
     pop.tintColor = [UIColor lightGrayColor];
-
-    
+    pop.menuStringArray = @[@"something important",@"something important",@"something important",@"something important",@"something important",@"something important",@"something important",@"something important",];
     [self presentViewController:pop animated:YES completion:nil];
-
-    
-    
+ 
     
 }
 
