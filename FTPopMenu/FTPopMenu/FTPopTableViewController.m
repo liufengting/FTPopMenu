@@ -31,9 +31,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
 
-    
     
 }
 
@@ -42,22 +40,8 @@
     self.automaticallyAdjustsScrollViewInsets = YES;
     self.modalPresentationStyle = UIModalPresentationPopover;
     self.popoverPresentationController.delegate = self;
-
     self.tableView.backgroundColor = [UIColor clearColor];
-
-//    if (!_tableView) {
-//        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 200, 200) style:UITableViewStyleGrouped];
-//        _tableView.translatesAutoresizingMaskIntoConstraints = NO;
-//        [self.view addSubview:_tableView];
-//    }
-//    _tableView.delegate = self;
-//    _tableView.dataSource = self;
 }
-
-
-
-
-
 
 -(CGFloat)rowHeight
 {
@@ -102,6 +86,25 @@
     return self.tableviewHeaderViewHeight + (self.menuStringArray.count)*self.rowHeight;
 }
 
+-(UIPopoverArrowDirection)perferArrowDirection
+{
+    UIPopoverArrowDirection direction = UIPopoverArrowDirectionUp;
+    if (self.sourceView) {
+        CGRect sourceFrame = self.sourceView.frame;
+        CGFloat centerX = sourceFrame.origin.x + sourceFrame.size.width/2;
+        CGFloat centerY = sourceFrame.origin.y + sourceFrame.size.height/2;
+        if (centerY > [UIScreen mainScreen].bounds.size.height/2) {
+            if (centerX < self.perferdWidth/2 ) {
+                direction = UIPopoverArrowDirectionLeft;
+            }else if ([UIScreen mainScreen].bounds.size.width - centerX < self.perferdWidth/2){
+                direction = UIPopoverArrowDirectionRight;
+            }else{
+                direction = UIPopoverArrowDirectionDown;
+            }
+        }
+    }
+    return direction;
+}
 
 
 #pragma mark - Table view data source
@@ -150,7 +153,6 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
 }
 
 #pragma mark - UIPopoverPresentationControllerDelegate
@@ -165,7 +167,9 @@
     }
     self.preferredContentSize = CGSizeMake(self.perferdWidth,[self contentHeight]);
 
-    popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionUp;
+
+    
+    popoverPresentationController.permittedArrowDirections = [self perferArrowDirection];
     popoverPresentationController.passthroughViews = nil;
     popoverPresentationController.popoverLayoutMargins = UIEdgeInsetsMake(40, 0, 0, 0);
     popoverPresentationController.backgroundColor = self.tintColor;

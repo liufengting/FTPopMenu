@@ -29,7 +29,7 @@
     FTPopTableViewController *pop = [[FTPopTableViewController alloc] init];
     pop.barButtonItem = sender;
     pop.titleString = @"Some";
-    pop.tintColor = [[UIColor whiteColor] colorWithAlphaComponent:0.3];
+    pop.tintColor = [[UIColor whiteColor] colorWithAlphaComponent:0.2];
 //    pop.rowHeight = 60;
     pop.menuStringArray = @[@"something important",@"something important",@"something important",@"something important",@"something important",@"something important",@"something important",@"something important",];
 
@@ -43,7 +43,7 @@
     FTPopTableViewController *pop = [[FTPopTableViewController alloc] init];
     pop.sourceView = sender;
     pop.titleString = @"Some";
-    pop.tintColor = [UIColor lightGrayColor];
+    pop.tintColor = [[UIColor whiteColor] colorWithAlphaComponent:0.2];
     pop.menuStringArray = @[@"something important",@"something important",@"something important",@"something important",@"something important",@"something important",@"something important",@"something important",];
     [self presentViewController:pop animated:YES completion:nil];
  
