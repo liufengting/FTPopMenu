@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^FTPopMenuDoneBlock)(NSInteger selectedIndex);
+typedef void(^FTPopMenuCancelBlock)();
+
 @interface FTPopTableViewController : UITableViewController
 
 @property (nonatomic, assign)UIBarButtonItem *barButtonItem;
@@ -19,5 +22,9 @@
 @property (nonatomic, strong)NSString* titleString;
 @property (nonatomic, strong)NSArray<NSString *>* menuStringArray;
 @property (nonatomic, strong)NSArray<NSString *>* menuImageNameArray;
+
+@property (nonatomic, assign)NSInteger selectedIndex;
+@property (nonatomic, strong)FTPopMenuDoneBlock doneBlock;
+@property (nonatomic, strong)FTPopMenuCancelBlock cancelBlock;
 
 @end

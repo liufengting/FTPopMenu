@@ -10,4 +10,19 @@
 
 @interface UIViewController (FTPopMenu)
 
+-(void)showMenuFromButton:(UIButton *)sender;
+
+-(void)showFTMenuFromView:(UIView *)sender
+                    title:(NSString *)title
+                menuArray:(NSArray<NSString *> *)menuArray
+       menuImageNameArray:(NSArray<NSString *> *)menuImageNameArray
+                     done:(void(^)(NSInteger selectedIndex))done
+                   cancel:(void(^)())cancel;
+
+-(void)showFTMenuFromBarButtonItem:(UIBarButtonItem *)barButtonItem
+                             title:(NSString *)title
+                         menuArray:(NSArray<NSString *> *)menuArray
+                menuImageNameArray:(NSArray<NSString *> *)menuImageNameArray
+                              done:(void(^)(NSInteger selectedIndex))done
+                            cancel:(void(^)())cancel;
 @end

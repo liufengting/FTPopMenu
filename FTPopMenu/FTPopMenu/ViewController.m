@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "FTPopTableViewController.h"
-
+#import "UIViewController+FTPopMenu.h"
 
 @interface ViewController ()
 
@@ -40,13 +40,15 @@
 
 - (IBAction)showAction:(UIButton *)sender {
     
-    FTPopTableViewController *pop = [[FTPopTableViewController alloc] init];
-    pop.sourceView = sender;
-    pop.titleString = @"Some";
-    pop.tintColor = [[UIColor whiteColor] colorWithAlphaComponent:0.2];
-    pop.menuStringArray = @[@"something important",@"something important",@"something important",@"something important",@"something important",@"something important",@"something important",@"something important",];
-    [self presentViewController:pop animated:YES completion:nil];
- 
+//    FTPopTableViewController *pop = [[FTPopTableViewController alloc] init];
+//    pop.sourceView = sender;
+//    pop.titleString = @"Some";
+//    pop.tintColor = [[UIColor whiteColor] colorWithAlphaComponent:0.2];
+//    pop.menuStringArray = @[@"something important",@"something important",@"something important",@"something important",@"something important",@"something important",@"something important",@"something important",];
+//    [self presentViewController:pop animated:YES completion:nil];
+
+    
+    [self showMenuFromButton:sender];
     
 }
 

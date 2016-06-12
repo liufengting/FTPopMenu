@@ -153,12 +153,15 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    self.selectedIndex = indexPath.row;
+    [self dismiss];
 }
 
 #pragma mark - UIPopoverPresentationControllerDelegate
 
 - (void)prepareForPopoverPresentation:(UIPopoverPresentationController *)popoverPresentationController {
     
+    _selectedIndex = -1;
     if (self.barButtonItem) {
         self.popoverPresentationController.barButtonItem = self.barButtonItem;
     } else {
@@ -166,7 +169,6 @@
         self.popoverPresentationController.sourceRect = self.sourceView.bounds;
     }
     self.preferredContentSize = CGSizeMake(self.perferdWidth,[self contentHeight]);
-
 
     
     popoverPresentationController.permittedArrowDirections = [self perferArrowDirection];
@@ -191,8 +193,15 @@
 }
 - (void)popoverPresentationControllerDidDismissPopover:(UIPopoverPresentationController *)popoverPresentationController
 {
-    
-    
+    if (_selectedIndex >= 0) {
+        if (self.doneBlock) {
+            self.doneBlock(0);
+        }
+    }else{
+        if (self.cancelBlock) {
+            self.cancelBlock();
+        }
+    }
 }
 
 
