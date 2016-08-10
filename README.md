@@ -4,12 +4,13 @@ FTPopMenu. It's wrapped from UIPopoverViewController. Here is a screenshot of it
 
 
 
-![ScreenShots](ScreenShots/ScreenShots1.png")
-![ScreenShots](/ScreenShots/ScreenShots2.png")
-![ScreenShots](/ScreenShots/ScreenShots3.png")
-![ScreenShots](/ScreenShots/ScreenShots4.png")
-![ScreenShots](/ScreenShots/ScreenShots5.png")
-![ScreenShots](/ScreenShots/ScreenShots6.png")
+![FTPopMenu](https://raw.githubusercontent.com/liufengting/FTPopMenu/master/ScreenShots/ScreenShots1.png)
+![FTPopMenu](https://raw.githubusercontent.com/liufengting/FTPopMenu/master/ScreenShots/ScreenShots2.png)
+![FTPopMenu](https://raw.githubusercontent.com/liufengting/FTPopMenu/master/ScreenShots/ScreenShots3.png)
+![FTPopMenu](https://raw.githubusercontent.com/liufengting/FTPopMenu/master/ScreenShots/ScreenShots4.png)
+![FTPopMenu](https://raw.githubusercontent.com/liufengting/FTPopMenu/master/ScreenShots/ScreenShots5.png)
+![FTPopMenu](https://raw.githubusercontent.com/liufengting/FTPopMenu/master/ScreenShots/ScreenShots6.png)
+
 
 
 
