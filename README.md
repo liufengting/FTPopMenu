@@ -4,9 +4,13 @@ FTPopMenu. It's wrapped from UIPopoverViewController. Here is a screenshot of it
 
 
  <img src="/ScreenShots/ScreenShots1.png" width="250"/> <img src="/ScreenShots/ScreenShots2.png" width="250"/> <img src="/ScreenShots/ScreenShots3.png" width="250"/>
- <img src="/ScreenShots/ScreenShots4.png" width="400"/> 
- <img src="/ScreenShots/ScreenShots5.png" width="400"/>
- <img src="/ScreenShots/ScreenShots6.png" width="400"/>
+
+
+ <img src="/ScreenShots/ScreenShots4.png" width="500"/> 
+
+ <img src="/ScreenShots/ScreenShots5.png" width="500"/>
+
+ <img src="/ScreenShots/ScreenShots6.png" width="500"/>
 
 
 ## Maybe you want use [FTIndicator](https://github.com/liufengting/FTIndicator) with `FTPopMenu`.<D-r>
