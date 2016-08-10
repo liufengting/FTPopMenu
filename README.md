@@ -4,7 +4,7 @@ FTPopMenu. It's wrapped from UIPopoverViewController. Here is a screenshot of it
 
 
 
-![ScreenShots](/ScreenShots/ScreenShots1.png")
+![ScreenShots](ScreenShots/ScreenShots1.png")
 ![ScreenShots](/ScreenShots/ScreenShots2.png")
 ![ScreenShots](/ScreenShots/ScreenShots3.png")
 ![ScreenShots](/ScreenShots/ScreenShots4.png")
