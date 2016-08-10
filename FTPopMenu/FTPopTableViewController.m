@@ -8,6 +8,8 @@
 
 #import "FTPopTableViewController.h"
 
+static NSString * const FTPopTableViewControllerCellIdentifier = @"FTPopTableViewControllerCellIdentifier";
+
 @interface FTPopTableViewController () <UIPopoverPresentationControllerDelegate,UIAdaptivePresentationControllerDelegate>
 
 @end
@@ -16,7 +18,7 @@
 
 -(instancetype)init
 {
-    self = [self initWithStyle:UITableViewStyleGrouped];
+    self = [self initWithStyle:UITableViewStylePlain];
     return self;
 }
 -(instancetype)initWithStyle:(UITableViewStyle)style
@@ -31,12 +33,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    
+   
 }
-
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [self.tableView reloadData];
+}
 -(void)setUp
 {
+    self.view.backgroundColor = [UIColor whiteColor];
     self.automaticallyAdjustsScrollViewInsets = YES;
     self.modalPresentationStyle = UIModalPresentationPopover;
     self.popoverPresentationController.delegate = self;
@@ -46,14 +53,14 @@
 -(CGFloat)rowHeight
 {
     if (_rowHeight <= 0) {
-        _rowHeight = 44.f;
+        _rowHeight = 40.f;
     }
     return _rowHeight;
 }
 -(UIColor *)tintColor
 {
     if (!_tintColor) {
-        _tintColor = [UIColor whiteColor];
+        _tintColor = [UIColor clearColor];
     }
     return _tintColor;
 }
@@ -61,24 +68,24 @@
 -(UIColor *)textColor
 {
     if (!_textColor) {
-        _textColor = [UIColor blackColor];
+        _textColor = [UIColor whiteColor];
     }
     return _textColor;
 }
 -(CGFloat)perferdWidth
 {
     if (_perferdWidth <= 0) {
-        _perferdWidth = 200.f;
+        _perferdWidth = 140.f;
     }
     return _perferdWidth;
 }
 
 -(CGFloat)tableviewHeaderViewHeight
 {
-    if (_titleString.length) {
+    if (self.titleString.length) {
         return 30.f;
     }
-    return 0.f;
+    return 0.01f;
 }
 
 -(CGFloat)contentHeight
@@ -130,7 +137,7 @@
 }
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    if (_titleString.length) {
+    if (self.titleString.length) {
         UILabel *header = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, [self tableviewHeaderViewHeight])];
         header.backgroundColor = [UIColor clearColor];
         header.textColor = self.textColor;
@@ -143,11 +150,13 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"FTPopTableViewControllerCellIdentifier"];
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:FTPopTableViewControllerCellIdentifier];
     cell.backgroundColor = [UIColor clearColor];
     cell.textLabel.text = self.menuStringArray[indexPath.row];
     cell.textLabel.textColor = self.textColor;
-    cell.imageView.image = [UIImage imageNamed:@"button-folder"];
+    if (self.menuStringArray.count - 1 >= indexPath.row) {
+        cell.imageView.image = [UIImage imageNamed:self.menuStringArray[indexPath.row]];
+    }
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -171,10 +180,10 @@
     self.preferredContentSize = CGSizeMake(self.perferdWidth,[self contentHeight]);
 
     
-    popoverPresentationController.permittedArrowDirections = [self perferArrowDirection];
-    popoverPresentationController.passthroughViews = nil;
-    popoverPresentationController.popoverLayoutMargins = UIEdgeInsetsMake(40, 0, 0, 0);
-    popoverPresentationController.backgroundColor = self.tintColor;
+    self.popoverPresentationController.permittedArrowDirections = [self perferArrowDirection];
+    self.popoverPresentationController.passthroughViews = nil;
+    self.popoverPresentationController.popoverLayoutMargins = UIEdgeInsetsMake(40, 0, 0, 0);
+    self.popoverPresentationController.backgroundColor = self.tintColor;
   
 }
 
@@ -195,7 +204,7 @@
 {
     if (_selectedIndex >= 0) {
         if (self.doneBlock) {
-            self.doneBlock(0);
+            self.doneBlock(_selectedIndex);
         }
     }else{
         if (self.cancelBlock) {
@@ -226,7 +235,7 @@
 - (void)dismiss {
     [self dismissViewControllerAnimated:YES
                              completion:^{
-                                 
+
                              }];
 }
 

@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5A3C3A011CFC6BCB00239693 /* FTPopTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3C3A001CFC6BCB00239693 /* FTPopTableViewController.m */; };
+		5A0B49D61D5B672A0079EC98 /* FTPopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0B49D11D5B672A0079EC98 /* FTPopMenu.m */; };
+		5A0B49D71D5B672A0079EC98 /* FTPopTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0B49D31D5B672A0079EC98 /* FTPopTableViewController.m */; };
+		5A0B49D81D5B672A0079EC98 /* UIViewController+FTPopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0B49D51D5B672A0079EC98 /* UIViewController+FTPopMenu.m */; };
 		5A675A7B1CFAAD6B000DAC1C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A675A7A1CFAAD6B000DAC1C /* main.m */; };
 		5A675A7E1CFAAD6B000DAC1C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A675A7D1CFAAD6B000DAC1C /* AppDelegate.m */; };
 		5A675A811CFAAD6B000DAC1C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A675A801CFAAD6B000DAC1C /* ViewController.m */; };
@@ -15,8 +17,7 @@
 		5A675A861CFAAD6B000DAC1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A675A851CFAAD6B000DAC1C /* Assets.xcassets */; };
 		5A675A891CFAAD6B000DAC1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A675A871CFAAD6B000DAC1C /* LaunchScreen.storyboard */; };
 		5A675A941CFAAD6B000DAC1C /* FTPopMenuUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A675A931CFAAD6B000DAC1C /* FTPopMenuUITests.m */; };
-		5A6E12151CFFEC5E004E2BCF /* FTPopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6E12141CFFEC5E004E2BCF /* FTPopMenu.m */; };
-		5A6E12181CFFF49A004E2BCF /* UIViewController+FTPopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6E12171CFFF49A004E2BCF /* UIViewController+FTPopMenu.m */; };
+		5AC779001D5AEB13007D1F82 /* light.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5AC778FF1D5AEB13007D1F82 /* light.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,8 +31,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5A3C39FF1CFC6BCB00239693 /* FTPopTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTPopTableViewController.h; sourceTree = "<group>"; };
-		5A3C3A001CFC6BCB00239693 /* FTPopTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTPopTableViewController.m; sourceTree = "<group>"; };
+		5A0B49D01D5B672A0079EC98 /* FTPopMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTPopMenu.h; sourceTree = "<group>"; };
+		5A0B49D11D5B672A0079EC98 /* FTPopMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTPopMenu.m; sourceTree = "<group>"; };
+		5A0B49D21D5B672A0079EC98 /* FTPopTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTPopTableViewController.h; sourceTree = "<group>"; };
+		5A0B49D31D5B672A0079EC98 /* FTPopTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTPopTableViewController.m; sourceTree = "<group>"; };
+		5A0B49D41D5B672A0079EC98 /* UIViewController+FTPopMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FTPopMenu.h"; sourceTree = "<group>"; };
+		5A0B49D51D5B672A0079EC98 /* UIViewController+FTPopMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FTPopMenu.m"; sourceTree = "<group>"; };
 		5A675A761CFAAD6B000DAC1C /* FTPopMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FTPopMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A675A7A1CFAAD6B000DAC1C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5A675A7C1CFAAD6B000DAC1C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -45,10 +50,7 @@
 		5A675A8F1CFAAD6B000DAC1C /* FTPopMenuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FTPopMenuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A675A931CFAAD6B000DAC1C /* FTPopMenuUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FTPopMenuUITests.m; sourceTree = "<group>"; };
 		5A675A951CFAAD6B000DAC1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5A6E12131CFFEC5E004E2BCF /* FTPopMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTPopMenu.h; sourceTree = "<group>"; };
-		5A6E12141CFFEC5E004E2BCF /* FTPopMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTPopMenu.m; sourceTree = "<group>"; };
-		5A6E12161CFFF49A004E2BCF /* UIViewController+FTPopMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FTPopMenu.h"; sourceTree = "<group>"; };
-		5A6E12171CFFF49A004E2BCF /* UIViewController+FTPopMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FTPopMenu.m"; sourceTree = "<group>"; };
+		5AC778FF1D5AEB13007D1F82 /* light.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = light.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A0B49CF1D5B672A0079EC98 /* FTPopMenu */ = {
+			isa = PBXGroup;
+			children = (
+				5A0B49D01D5B672A0079EC98 /* FTPopMenu.h */,
+				5A0B49D11D5B672A0079EC98 /* FTPopMenu.m */,
+				5A0B49D21D5B672A0079EC98 /* FTPopTableViewController.h */,
+				5A0B49D31D5B672A0079EC98 /* FTPopTableViewController.m */,
+				5A0B49D41D5B672A0079EC98 /* UIViewController+FTPopMenu.h */,
+				5A0B49D51D5B672A0079EC98 /* UIViewController+FTPopMenu.m */,
+			);
+			name = FTPopMenu;
+			path = ../../FTPopMenu;
+			sourceTree = "<group>";
+		};
 		5A675A6D1CFAAD6B000DAC1C = {
 			isa = PBXGroup;
 			children = (
@@ -94,12 +110,8 @@
 				5A675A7D1CFAAD6B000DAC1C /* AppDelegate.m */,
 				5A675A7F1CFAAD6B000DAC1C /* ViewController.h */,
 				5A675A801CFAAD6B000DAC1C /* ViewController.m */,
-				5A6E12161CFFF49A004E2BCF /* UIViewController+FTPopMenu.h */,
-				5A6E12171CFFF49A004E2BCF /* UIViewController+FTPopMenu.m */,
-				5A6E12131CFFEC5E004E2BCF /* FTPopMenu.h */,
-				5A6E12141CFFEC5E004E2BCF /* FTPopMenu.m */,
-				5A3C39FF1CFC6BCB00239693 /* FTPopTableViewController.h */,
-				5A3C3A001CFC6BCB00239693 /* FTPopTableViewController.m */,
+				5A0B49CF1D5B672A0079EC98 /* FTPopMenu */,
+				5AC778FF1D5AEB13007D1F82 /* light.jpeg */,
 				5A675A821CFAAD6B000DAC1C /* Main.storyboard */,
 				5A675A851CFAAD6B000DAC1C /* Assets.xcassets */,
 				5A675A871CFAAD6B000DAC1C /* LaunchScreen.storyboard */,
@@ -175,7 +187,6 @@
 				TargetAttributes = {
 					5A675A751CFAAD6B000DAC1C = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = E83AC9WR2F;
 					};
 					5A675A8E1CFAAD6B000DAC1C = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -209,6 +220,7 @@
 			files = (
 				5A675A891CFAAD6B000DAC1C /* LaunchScreen.storyboard in Resources */,
 				5A675A861CFAAD6B000DAC1C /* Assets.xcassets in Resources */,
+				5AC779001D5AEB13007D1F82 /* light.jpeg in Resources */,
 				5A675A841CFAAD6B000DAC1C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,11 +239,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A0B49D71D5B672A0079EC98 /* FTPopTableViewController.m in Sources */,
+				5A0B49D81D5B672A0079EC98 /* UIViewController+FTPopMenu.m in Sources */,
+				5A0B49D61D5B672A0079EC98 /* FTPopMenu.m in Sources */,
 				5A675A811CFAAD6B000DAC1C /* ViewController.m in Sources */,
-				5A6E12181CFFF49A004E2BCF /* UIViewController+FTPopMenu.m in Sources */,
-				5A3C3A011CFC6BCB00239693 /* FTPopTableViewController.m in Sources */,
 				5A675A7E1CFAAD6B000DAC1C /* AppDelegate.m in Sources */,
-				5A6E12151CFFEC5E004E2BCF /* FTPopMenu.m in Sources */,
 				5A675A7B1CFAAD6B000DAC1C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
