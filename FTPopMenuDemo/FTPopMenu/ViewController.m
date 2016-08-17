@@ -25,7 +25,6 @@
 -(void)makeNavigationBarTransparent
 {
     [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
-    
     [self.navigationController.navigationBar setTranslucent:YES];
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
@@ -40,9 +39,19 @@
              @"Option 5",
              @"Option 6"];
 }
+-(NSArray <NSString *>*)menuImageStringArray
+{
+    return @[@"button-folder",
+             @"button-folder",
+             @"button-folder",
+             @"button-folder",
+             @"button-folder",
+             @"button-folder"];
+}
 
 - (IBAction)doneAction:(UIBarButtonItem *)sender {
     
+    // Extension normal
     [self showFTMenuFromBarButtonItem:sender
                             menuArray:[self menuStringArray]
                             doneBlock:^(NSInteger selectedIndex) {
@@ -51,20 +60,100 @@
                                 
                             }];
     
+    // Extension custom
+//    [self showFTMenuFromBarButtonItem:sender
+//                                title:@"I am title"
+//                            menuArray:[self menuStringArray]
+//                   menuImageNameArray:[self menuImageStringArray]
+//                        perferedWidth:200
+//                            rowHeight:60
+//                            tintColor:[UIColor blackColor]
+//                            doneBlock:^(NSInteger selectedIndex) {
+//                                
+//                            }
+//                          cancelBlock:^{
+//                              
+//                          }];
+    
+   //Class Method normal
+//    [FTPopMenu showFTMenuForViewController:self
+//                         fromBarButtonItem:sender
+//                                 menuArray:[self menuStringArray]
+//                                 doneBlock:^(NSInteger selectedIndex) {
+//                                     
+//                                 } cancelBlock:^{
+//                                     
+//                                 }];
+    
+    //Class Method custom
+//    [FTPopMenu showFTMenuForViewController:self
+//                         fromBarButtonItem:sender
+//                                     title:@"I am title"
+//                                 menuArray:[self menuStringArray]
+//                        menuImageNameArray:[self menuImageStringArray]
+//                             preferedWidth:200
+//                                 rowHeight:50
+//                                 tintColor:[UIColor blackColor]
+//                                 doneBlock:^(NSInteger selectedIndex) {
+//                                     
+//                                 }
+//                               cancelBlock:^{
+//                                   
+//                               }];
+    
 }
 
 - (IBAction)showAction:(UIButton *)sender
 {
-
-    [FTPopMenu showFTMenuForViewController:self
-                                  fromView:sender
-                                 menuArray:[self menuStringArray]
-                                 doneBlock:^(NSInteger selectedIndex) {
-                                     
-                                 } cancelBlock:^{
-                                     
-                                 }];
+    // Extension normal
+    [self showFTMenuFromView:sender
+                   menuArray:[self menuStringArray]
+                   doneBlock:^(NSInteger selectedIndex) {
+                       
+                   }cancelBlock:^{
+                       
+                   }];
     
+    // Extension custom
+//   [self showFTMenuFromView:sender
+//                      title:@"I am title"
+//                  menuArray:[self menuStringArray]
+//         menuImageNameArray:[self menuImageStringArray]
+//              perferedWidth:200
+//                  rowHeight:50
+//                  tintColor:[UIColor blackColor]
+//                  doneBlock:^(NSInteger selectedIndex) {
+//                      
+//                  }cancelBlock:^{
+//                      
+//                  }];
+    
+    
+    //Class Method normal
+//    [FTPopMenu showFTMenuForViewController:self
+//                                  fromView:sender
+//                                 menuArray:[self menuStringArray]
+//                                 doneBlock:^(NSInteger selectedIndex) {
+//                                     
+//                                 } cancelBlock:^{
+//                                     
+//                                 }];
+
+
+    //Class Method custom
+//   [FTPopMenu showFTMenuForViewController:self
+//                                 fromView:sender
+//                                    title:@"I am Title"
+//                                menuArray:[self menuStringArray]
+//                       menuImageNameArray:[self menuImageStringArray]
+//                            preferedWidth:200
+//                                rowHeight:60
+//                                tintColor:[UIColor blackColor]
+//                                doneBlock:^(NSInteger selectedIndex) {
+//                                    
+//                                }cancelBlock:^{
+//                                  
+//                              }];
 }
 
 
