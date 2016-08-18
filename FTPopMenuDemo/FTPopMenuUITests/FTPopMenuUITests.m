@@ -2,7 +2,7 @@
 //  FTPopMenuUITests.m
 //  FTPopMenuUITests
 //
-//  Created by liufengting on 16/5/29.
+//  Created by liufengting https://github.com/liufengting on 16/5/29.
 //  Copyright © 2016年 liufengting. All rights reserved.
 //
 
