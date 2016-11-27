@@ -202,15 +202,7 @@ static NSString * const FTPopTableViewControllerCellIdentifier = @"FTPopTableVie
 }
 - (void)popoverPresentationControllerDidDismissPopover:(UIPopoverPresentationController *)popoverPresentationController
 {
-    if (_selectedIndex >= 0) {
-        if (self.doneBlock) {
-            self.doneBlock(_selectedIndex);
-        }
-    }else{
-        if (self.cancelBlock) {
-            self.cancelBlock();
-        }
-    }
+
 }
 
 
@@ -235,7 +227,15 @@ static NSString * const FTPopTableViewControllerCellIdentifier = @"FTPopTableVie
 - (void)dismiss {
     [self dismissViewControllerAnimated:YES
                              completion:^{
-
+                                 if (_selectedIndex >= 0) {
+                                     if (self.doneBlock) {
+                                         self.doneBlock(_selectedIndex);
+                                     }
+                                 }else{
+                                     if (self.cancelBlock) {
+                                         self.cancelBlock();
+                                     }
+                                 }
                              }];
 }
 

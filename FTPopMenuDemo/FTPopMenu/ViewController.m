@@ -55,7 +55,7 @@
     [self showFTMenuFromBarButtonItem:sender
                             menuArray:[self menuStringArray]
                             doneBlock:^(NSInteger selectedIndex) {
-                                
+                                NSLog(@"%ld",selectedIndex);
                             } cancelBlock:^{
                                 
                             }];
@@ -109,7 +109,8 @@
     [self showFTMenuFromView:sender
                    menuArray:[self menuStringArray]
                    doneBlock:^(NSInteger selectedIndex) {
-                       
+                       NSLog(@"%ld",selectedIndex);
+
                    }cancelBlock:^{
                        
                    }];
@@ -141,19 +142,22 @@
 
 
     //Class Method custom
-//   [FTPopMenu showFTMenuForViewController:self
-//                                 fromView:sender
-//                                    title:@"I am Title"
-//                                menuArray:[self menuStringArray]
-//                       menuImageNameArray:[self menuImageStringArray]
-//                            preferedWidth:200
-//                                rowHeight:60
-//                                tintColor:[UIColor blackColor]
-//                                doneBlock:^(NSInteger selectedIndex) {
-//                                    
-//                                }cancelBlock:^{
-//                                  
-//                              }];
+    
+//    [FTPopMenu showFTMenuForViewController:self
+//                                  fromView:sender
+//                                     title:@"I am Title"
+//                                 menuArray:[self menuStringArray]
+//                        menuImageNameArray:[self menuImageStringArray]
+//                             perferedWidth:200
+//                                 rowHeight:60
+//                                 tintColor:[UIColor blackColor]
+//                                 doneBlock:^(NSInteger selectedIndex) {
+//                                     
+//                                 } cancelBlock:^{
+//                                     
+//                                 }];
+    
+
 }
 
 

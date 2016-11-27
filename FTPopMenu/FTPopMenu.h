@@ -39,7 +39,7 @@
                              title:(NSString *)title
                          menuArray:(NSArray<NSString *> *)menuArray
                 menuImageNameArray:(NSArray<NSString *> *)menuImageNameArray
-                     preferedWidth:(CGFloat )perferedWidth
+                     perferedWidth:(CGFloat )perferedWidth
                          rowHeight:(CGFloat )rowHeight
                          tintColor:(UIColor *)tintColor
                          doneBlock:(void(^)(NSInteger selectedIndex))doneBlock
@@ -69,16 +69,17 @@
                        cancelBlock:(void(^)())cancelBlock;
 
 
-+(void)showFTMenuForViewController:(UIViewController *)sourceViewController
-                 fromBarButtonItem:(UIBarButtonItem *)barButtonItem
-                             title:(NSString *)title
-                         menuArray:(NSArray<NSString *> *)menuArray
-                menuImageNameArray:(NSArray<NSString *> *)menuImageNameArray
-                     preferedWidth:(CGFloat )perferedWidth
-                         rowHeight:(CGFloat )rowHeight
-                         tintColor:(UIColor *)tintColor
-                         doneBlock:(void(^)(NSInteger selectedIndex))doneBlock
-                       cancelBlock:(void(^)())cancelBlock;
+-(void)showForViewController:(UIViewController *)sourceViewController
+           fromBarButtonItem:(UIBarButtonItem *)barButtonItem
+                  senderView:(UIView *)sender
+                       title:(NSString *)title
+                   tintColor:(UIColor *)tintColor
+               perferedWidth:(CGFloat )perferedWidth
+                   rowHeight:(CGFloat )rowHeight
+                   menuArray:(NSArray<NSString *> *)menuArray
+          menuImageNameArray:(NSArray<NSString *> *)menuImageNameArray
+                   doneBlock:(void(^)(NSInteger selectedIndex))doneBlock
+                 cancelBlock:(void(^)())cancelBlock;
 
 
 
