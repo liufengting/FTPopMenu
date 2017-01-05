@@ -164,7 +164,7 @@ It provides two types of API to show menus.
 
 ## Maybe you want use [FTPopOverMenu](https://github.com/liufengting/FTPopOverMenu) instead of `FTPopMenu`. It has more simple APIs.
 
-<img src="https://raw.githubusercontent.com/liufengting/FTPopOverMenu/master/ScreenShots/Demo.gif" width="600"/>
+<img src="https://raw.githubusercontent.com/liufengting/FTResourceRepo/master/Resource/FTPopOverMenu/screenshots.gif" width="600"/>
 
 
 # License

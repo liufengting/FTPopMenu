@@ -187,6 +187,7 @@
 				TargetAttributes = {
 					5A675A751CFAAD6B000DAC1C = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = E83AC9WR2F;
 					};
 					5A675A8E1CFAAD6B000DAC1C = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -377,6 +378,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = E83AC9WR2F;
 				INFOPLIST_FILE = FTPopMenu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.liufengting.FTPopMenu;
@@ -389,6 +391,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = E83AC9WR2F;
 				INFOPLIST_FILE = FTPopMenu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.liufengting.FTPopMenu;
