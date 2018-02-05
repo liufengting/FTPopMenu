@@ -15,6 +15,11 @@ FTPopMenu. It's wrapped from UIPopoverViewController. Here are screenshots of it
 
 <img src="/ScreenShots/ScreenShots6.png" width="600"/>
 
+## Third Party Bindings
+
+### React Native
+You may now use this library with [React Native](https://github.com/facebook/react-native) via the module [here](https://github.com/prscX/react-native-popover-menu)
+
 # Usage
  
 It provides two types of API to show menus.
@@ -165,12 +170,6 @@ It provides two types of API to show menus.
 ## Maybe you want use [FTPopOverMenu](https://github.com/liufengting/FTPopOverMenu) instead of `FTPopMenu`. It has more simple APIs.
 
 <img src="https://raw.githubusercontent.com/liufengting/FTResourceRepo/master/Resource/FTPopOverMenu/screenshots.gif" width="600"/>
-
-## Third Party Bindings
-
-### React Native
-You may now use this library with [React Native](https://github.com/facebook/react-native) via the module [here](https://github.com/prscX/react-native-popover-menu)
-
 
 # License
 
